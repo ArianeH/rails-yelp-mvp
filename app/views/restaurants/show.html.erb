@@ -6,8 +6,16 @@
   <p>Phone Number: <%= @restaurant.phone_number %></p>
   <p>Category: <%= @restaurant.category %></p>
   <br>
-  <p>Rating: </p>
+  <h3> Reviews </h3>
+
+  <ul>
+  <% @restaurant.reviews.each do |review|  %>
+    <li> Stars given: <%= review.rating %> <br>Comments <br><%= review.content %> </li>
+    <%= link_to "Delete review", review_path(review), method: :delete %>
+    <% end %>
+  </ul>
 
 </div>
 
 <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Go back to Homepage", restaurants_path %>

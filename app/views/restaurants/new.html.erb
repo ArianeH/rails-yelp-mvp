@@ -5,6 +5,16 @@
         <h1 class="text-center">Add new Restaurant</h1>
         <br>
         <%= form_for(@restaurant) do |form| %>
+        <% if @restaurant.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+
         <%= form.label :name %>
         <%= form.text_field :name, class: "form-control" %>
         <%= form.label :address %>

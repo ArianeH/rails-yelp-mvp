@@ -1,8 +1,19 @@
 <div class="container">
   <div class="col-xs-6 offset-xs-4">
-  <h2 class="text-center">Create new review</h2>
+    <h2 class="text-center">Create new review</h2>
     <div class="row">
+      <br>
       <%= form_for [@restaurant, @review] do |form| %>
+      <% if @review.errors.any? %>
+      <div id="error-explanation">
+        <ul>
+          <%= @review.errors.full_messages.each do |messages| %>
+          <li><%= messages %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
       <%= form.label :content %>
       <%= form.text_field :content, class: "form-control" %>
       <%= form.label :rating %>
