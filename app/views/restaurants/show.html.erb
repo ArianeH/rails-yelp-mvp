@@ -1,21 +1,33 @@
 <div class="container">
-
-  <h1><%= @restaurant.name %> - Details</h1>
-
-  <p>Address: <%= @restaurant.address %></p>
-  <p>Phone Number: <%= @restaurant.phone_number %></p>
-  <p>Category: <%= @restaurant.category %></p>
-  <br>
-  <h3> Reviews </h3>
-
-  <ul>
-  <% @restaurant.reviews.each do |review|  %>
-    <li> Stars given: <%= review.rating %> <br>Comments <br><%= review.content %> </li>
-    <%= link_to "Delete review", review_path(review), method: :delete %>
-    <% end %>
-  </ul>
-
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <h1 class="heading"><%= @restaurant.name %></h1>
+      <div class="restaurant-description">
+        <p>Address: <%= @restaurant.address %></p>
+        <p>Phone Number: <%= @restaurant.phone_number %></p>
+        <p>Category: <%= @restaurant.category %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-xs-12 col-sm-2">
+      <h3 class="heading"> Reviews </h3>
+    </div>
+    <div class="col-xs-12 col-sm-2 add-new-review">
+      <span><%= link_to "Add new review", new_restaurant_review_path(@restaurant)%></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="restaurant-reviews">
+        <ul>
+          <% @restaurant.reviews.each do |review|  %>
+          <li> Stars given: <%= review.rating %> <br>Comments: <br><%= review.content %> </li>
+          <%= link_to "Delete review", review_path(review), method: :delete, class: "small-link" %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
-<%= link_to "Go back to Homepage", restaurants_path %>

@@ -1,0 +1,38 @@
+.restaurants {
+  .restaurant-list {
+    padding-left: 0px;
+    li {
+      list-style: none;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: bolder;
+    }
+    .small-link {
+      font-size: 12px;
+      color: lightgrey;
+    }
+    .small-link:hover, .large-link:hover {
+      text-decoration: none;
+    }
+    .large-link {
+      font-size: 20px;
+      color: #688e68;
+    }
+    .large-link:hover {
+      color: #446744;
+    }
+    .small-link:hover {
+      color: #b7b5b5;
+    }
+  }
+  p {
+    font-size: 20px;
+    color: #777777;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+.heading {
+  color: #777777;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+}
+

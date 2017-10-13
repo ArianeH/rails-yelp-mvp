@@ -1,13 +1,16 @@
-<h1>Restaurants</h1>
+<div class="container">
+  <h1 class="heading">Restaurants</h1>
+  <div class="restaurants">
+    <p>Please select among the following restaurants!</p>
 
-<% @restaurants.each do |restaurant| %>
-<ul>
-  <li><%= restaurant.name %></li>
-  <%= link_to "Show", restaurant_path(restaurant) %>
-  <%= link_to "Edit", edit_restaurant_path(restaurant) %>
-  <%= link_to "Delete", restaurant_path(restaurant), method: :delete %>
-</ul>
-<% end %>
+    <% @restaurants.each do |restaurant| %>
+    <ul class="restaurant-list">
+      <li><%= link_to restaurant.name, restaurant_path(restaurant), class: "large-link"%></li>
 
-<%= link_to "Add new Restaurant", new_restaurant_path %>
+      <%= link_to "Edit", edit_restaurant_path(restaurant), class: "small-link"%>
+      <%= link_to "Delete", restaurant_path(restaurant), method: :delete, class: "small-link"%>
+    </ul>
+    <% end %>
 
+  </div>
+</div>

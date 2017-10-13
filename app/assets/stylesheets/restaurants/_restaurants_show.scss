@@ -1,0 +1,27 @@
+.restaurant-description, .restaurant-reviews {
+  font-family: 'Quicksand', sans-serif;
+  ul {
+    padding: 0px;
+    list-style: none;
+  }
+  .small-link {
+    font-size: 12px;
+    color: lightgrey;
+  }
+  .small-link:hover {
+    text-decoration: none;
+    color: #b7b5b5;
+  }
+}
+.add-new-review {
+  padding: 45px 0px 0px 0px;
+  a {
+    font-family: 'Quicksand', sans-serif;
+    color: #777777;
+  }
+  a:hover {
+    text-decoration: none;
+    color: #484848;
+  }
+}
+
